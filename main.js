@@ -72,7 +72,7 @@ thumbContainer.innerHTML += thumbnails;
 
 // Inizializzo una variabile che mi rende visibile solo la prima immagine trovata 
 
-let prova = document.querySelector(".pic-box").classList.add("show");
+let prova2 = document.querySelector(".pic-box").classList.add("show");
 
 // Creo una variabile per riferirmi alla freccia di su
 
@@ -87,17 +87,12 @@ arrowUp.addEventListener("click",
 
 function(){
     
-let prova2 = document.getElementsByClassName("thumbnail");
+    let attiva = document.querySelector(".thumbnail").classList.add("active");
 
-console.log(prova2);
-
-    for(i=0; i < 1; i++ ){
-        
-
-
-        prova.classList.add("active");
-
-        }
+    //  let rimuovi = document.querySelector(".thumbnail").classList.remove("active");
+    
+    
+   
     }
 )
 
