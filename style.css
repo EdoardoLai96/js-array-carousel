@@ -31,6 +31,7 @@
     background-color: white;
     text-align: end;
     position: relative;
+    display: none;
 }
 
 .pic-title{
@@ -82,24 +83,29 @@ color: white;
     filter: brightness(0.6);
 }
 
-.thumbnail img.active{
+.show{
+    display: block;
+}
+
+.active{
     filter: brightness(1);
     border: white solid 2px;
 }
 
-.arrow-up , .arrow-down{
+.arrow , .arrow{
     position: absolute;
     z-index: 9999999;
     text-align: center;
     width: 100%;
     color: #fff;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
-.arrow-up{
+#arrow-up{
     top: 5px;
 }
 
-.arrow-down{
+#arrow-down{
     bottom: 5px;
 }
