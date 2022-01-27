@@ -42,7 +42,7 @@ for (let i = 0; i < items.length; i++){
     
     slides += 
     `<div class="pic-box"> 
-    <img  src="${img}">
+    <img class="immagine" src="${img}">
     </div>`
 
     // Faccio lo stesso per la parte delle thumbnails 

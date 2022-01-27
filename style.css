@@ -15,23 +15,26 @@
 
 #carousel{
     height: 70%;
-    background-color: bisque;
     width: 100%;
     display: flex;
 }
 
 #pic-container{
     width: 80%;
-    background-color: cadetblue;
+    background-color: black;
     height: 100%;
+    position: relative;
 }
 
 .pic-box{
     height: 100%;
+    width: 100%;
     background-color: white;
     text-align: end;
-    position: relative;
-    display: none;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
 }
 
 .pic-title{
@@ -84,15 +87,17 @@ color: white;
 }
 
 .show{
-    display: block;
+    opacity: 1;
+    transition: 1s;
 }
 
 .active{
     filter: brightness(1);
     border: white solid 2px;
+    transition :  0.5s;
 }
 
-.arrow , .arrow{
+.arrow{
     position: absolute;
     z-index: 9999999;
     text-align: center;
@@ -100,6 +105,18 @@ color: white;
     color: #fff;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.arrow i:hover{
+    filter: hue-rotate();
+    transition: 0.2s;
+    font-size: 2rem;
+
+}
+
+.arrow i:active{
+    font-size: 1.5rem;
+
 }
 
 #arrow-up{
