@@ -70,31 +70,104 @@ const thumbContainer = document.getElementById("thumb-container");
 thumbContainer.innerHTML += thumbnails;
 
 
+
+
+
+
+
 // Inizializzo una variabile che mi rende visibile solo la prima immagine trovata 
 
-let prova2 = document.querySelector(".pic-box").classList.add("show");
 
 // Creo una variabile per riferirmi alla freccia di su
 
 
-const arrowUp = document.getElementById("arrow-up");
+const arrowUp = document.getElementById("arrow-up"); 
+
+const arrowDown = document.getElementById("arrow-down");
 
 
 // Aggiungo l'evento click alla freccia di su 
 
 
-arrowUp.addEventListener("click", 
+let currentSlide = 0;
+
+let miniature = document.getElementsByClassName("thumbnail");
+
+miniature[currentSlide].classList.add("active");
+
+
+let pictureBox = document.getElementsByClassName("pic-box");
+
+pictureBox[currentSlide].classList.add("show");
+
+arrowDown.addEventListener("click", 
 
 function(){
-    
-    let attiva = document.querySelector(".thumbnail").classList.add("active");
+    if(currentSlide < miniature.length - 1){
 
-    //  let rimuovi = document.querySelector(".thumbnail").classList.remove("active");
-    
-    
+        console.log("Passo dalla slide  " + currentSlide);
+        
+        pictureBox[currentSlide].classList.remove("show");
+        miniature[currentSlide].classList.remove("active");
+        
+        
+        currentSlide++;
+
+        console.log("Alla slide " + currentSlide)
+
+        pictureBox[currentSlide].classList.add("show");
+        miniature[currentSlide].classList.add("active");
+
+        //  let rimuovi = document.querySelector(".thumbnail").classList.remove("active");
+    } else {
+
+        pictureBox[currentSlide].classList.remove("show");
+        miniature[currentSlide].classList.remove("active");
+
+        currentSlide= 0;
+
+        pictureBox[currentSlide].classList.add("show");
+        miniature[currentSlide].classList.add("active");
+
+
+        console.log("questa è la slide " + currentSlide);
+
+    }
    
     }
 )
 
+arrowUp.addEventListener("click", 
+
+function(){
+  if(currentSlide == 0){
+        
+        pictureBox[currentSlide].classList.remove("show");
+        miniature[currentSlide].classList.remove("active");
+        
+        currentSlide = miniature.length -1;
+
+        pictureBox[currentSlide].classList.add("show");
+        miniature[currentSlide].classList.add("active");
+
+
+        console.log("questa è la slide " + currentSlide);
+
+    }else{
+        pictureBox[currentSlide].classList.remove("show");
+        miniature[currentSlide].classList.remove("active");
+        
+        currentSlide--;
+
+        pictureBox[currentSlide].classList.add("show");
+        miniature[currentSlide].classList.add("active");
+
+
+
+
+    }
+   
+    }
+)
 
 
